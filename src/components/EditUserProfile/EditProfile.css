@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+.edit-profile {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.edit-profile-form {
+  border: 2px solid white;
+  height: 60%;
+  width: 30%;
+  border-radius: 10px;
+  padding: 2%;
+}
+.edit-profile-form p {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 5% 0 5% 0;
+}
+.edit-profile-form p input {
+  width: 100%;
+  margin: 3% 0 7% 0;
+  padding: 3%;
+  border-radius: 5px;
+  border: none;
+}
+.update-btn {
+  width: 100%;
+  margin: 3% 0 7% 0;
+  padding: 3%;
+  border-radius: 5px;
+  border: 2px solid white;
+  cursor: pointer;
+  background-image: linear-gradient(
+    to right top,
+    #b0cffc,
+    #98dffb,
+    #9becea,
+    #baf3d3,
+    #e5f5c3
+  );
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+}
+.update-btn:hover {
+  transition: transform 0.5s;
+  transform: translateY(-2px);
+}
