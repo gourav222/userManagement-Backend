@@ -32,4 +32,30 @@ export const updateUser = async (id: any, data: any) => {
   } catch (err) {
     console.log("User For Registered", err);
   }
+};
+
+export const createUser = async (data: any) => {
+  try {
+    const response = await axios.post(
+      "http://localhost:8000/api/v1/registerUser",
+      data
+    );
+    console.log("User successfully registered", response.data);
+    return response.status;
+  } catch (err) {
+    console.log("User For Registered", err);
+  }
+};
+
+export const loginUser = async (data: any) => {
+  try {
+    const response = await axios.post(
+      "http://localhost:8000/api/v1/loginUser",
+      data
+    );
+    // console.log("Suc", response.data);
+    return response.status;
+  } catch (err) {
+    console.log("User For Registered", err);
+  }
 }

@@ -1,18 +1,31 @@
 import { useState } from "react";
 import "./SignUp.css";
 import { useNavigate } from "react-router-dom";
+import { createUser, loginUser } from "../../services/userService";
 
 const SignUp = ({ type }: { type: string }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const handleRegister = (e: any) => {
+  const handleRegister = async (e: any) => {
     e.preventDefault();
-    navigate("/login");
+    const response = await createUser({
+      fullName: name,
+      email: email,
+      password: password,
+    });
+    if (response === 201) navigate("/login");
+    else alert("Please enter valid user details");
   };
-  const handleLogin = (e:any) => {
-    e.preventDefault()
+  const handleLogin = async (e: any) => {
+    e.preventDefault();
+    const response = await loginUser({
+      email: email,
+      password: password,
+    });
+    if (response === 200) navigate("/dashboard");
+    else alert("Please enter valid email or password");
   };
   return (
     <div>
